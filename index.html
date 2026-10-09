@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Snehal, you've got this 🌻</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Caveat:wght@600&family=Nunito:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#FFF1F5; --bg2:#FFE0EA; --pink:#F9B9CE; --pink-d:#E8799E;
+  --sun:#FFC93C; --sun-d:#F2A900; --seed:#5A3A22; --ink:#4A2A3A; --card:#FFFFFF;
+  --display:'Fraunces',Georgia,serif; --hand:'Caveat','Segoe Script',cursive; --body:'Nunito',system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2B1822;--bg2:#3A2030;--card:#4A2A3C;--ink:#FFE9F0;--pink:#C4738F}}
+:root[data-theme="dark"]{--bg:#2B1822;--bg2:#3A2030;--card:#4A2A3C;--ink:#FFE9F0;--pink:#C4738F}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.6;overflow-x:hidden}
+h1,h2{font-family:var(--display);margin:0;line-height:1.1}
+svg.sf{width:100%;height:100%;display:block}
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh;min-height:100svh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:2rem 1.25rem;
+  background:radial-gradient(circle at 50% 40%,var(--bg) 0%,var(--bg2) 100%)}
+.bloom{position:absolute;width:min(70vw,520px);aspect-ratio:1;left:50%;top:50%;translate:-50% -50%;opacity:0;animation:bloom 2.4s cubic-bezier(.2,.8,.2,1) .2s forwards}
+.bloom>div{width:100%;height:100%;animation:spin 60s linear infinite}
+@keyframes bloom{from{opacity:0;scale:.2;rotate:-90deg}to{opacity:.28;scale:1;rotate:0deg}}
+@keyframes spin{to{rotate:360deg}}
+.msg{position:relative;z-index:2;max-width:760px}
+.msg .hi{font-family:var(--hand);font-size:clamp(1.8rem,5vw,2.6rem);color:var(--pink-d);opacity:0;animation:rise 1s ease 1.2s forwards}
+.msg h1{font-size:clamp(2.6rem,9vw,5.6rem);font-weight:700;letter-spacing:-.02em}
+.l1,.l2{display:block;opacity:0;filter:blur(12px);animation:focus 1.4s ease forwards}
+.l1{animation-delay:2.2s}
+.l2{animation-delay:3.8s;font-style:italic;font-weight:500;color:var(--sun-d);background:linear-gradient(transparent 62%,rgba(249,185,206,.7) 62%);display:inline-block;padding:0 .15em}
+@keyframes focus{to{opacity:1;filter:blur(0)}}
+@keyframes rise{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
+.sub{margin:1.6rem auto 0;max-width:34ch;opacity:0;animation:rise 1s ease 5.4s forwards}
+.cta{margin-top:1.6rem;opacity:0;animation:rise 1s ease 6s forwards}
+.btn{font:600 1.05rem var(--body);background:var(--sun);color:var(--seed);border:0;border-radius:999px;padding:.9rem 1.8rem;cursor:pointer;box-shadow:0 6px 0 var(--sun-d);transition:translate .15s,box-shadow .15s}
+.btn:hover{translate:0 2px;box-shadow:0 4px 0 var(--sun-d)}
+.btn:active{translate:0 6px;box-shadow:0 0 0 var(--sun-d)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--pink-d);outline-offset:4px}
+.drop{position:fixed;top:-60px;width:34px;height:34px;pointer-events:none;z-index:50;animation:fall linear forwards}
+@keyframes fall{to{translate:var(--dx) 115vh;rotate:var(--rot)}}
+
+/* ---------- Sections ---------- */
+section.pad{padding:5rem 1.25rem;max-width:1100px;margin:0 auto}
+.title{text-align:center;margin-bottom:.6rem;font-size:clamp(2rem,6vw,3.2rem)}
+.lead{text-align:center;max-width:48ch;margin:0 auto 3rem;opacity:.85}
+
+/* Vision board */
+.board{background:var(--bg2);border-radius:28px;padding:clamp(1.2rem,4vw,3rem);
+  background-image:radial-gradient(var(--pink) 1.4px,transparent 1.6px);background-size:26px 26px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:2.2rem 1.6rem}
+.pin{background:var(--card);padding:.7rem .7rem 1rem;border-radius:6px;box-shadow:0 10px 24px rgba(120,40,70,.14);position:relative;rotate:var(--r,0deg);transition:rotate .3s,translate .3s}
+.pin:hover,.pin:focus-visible{rotate:0deg;translate:0 -8px;outline:none}
+.pin::before{content:"";position:absolute;top:-12px;left:50%;width:76px;height:24px;translate:-50% 0;rotate:-3deg;background:rgba(255,201,60,.75)}
+.pin:nth-child(even)::before{background:rgba(249,185,206,.9)}
+.pin:nth-child(1){--r:-2.5deg}.pin:nth-child(2){--r:2deg}.pin:nth-child(3){--r:-1.5deg}.pin:nth-child(4){--r:3deg}
+.pin:nth-child(5){--r:-3deg}.pin:nth-child(6){--r:1.5deg}.pin:nth-child(7){--r:2.5deg}.pin:nth-child(8){--r:-2deg}
+.pic{aspect-ratio:1/.82;border-radius:4px;display:grid;place-items:center;font-size:4rem}
+.pin:nth-child(3n+1) .pic{background:linear-gradient(135deg,#FFE7A0,#FFC93C)}
+.pin:nth-child(3n+2) .pic{background:linear-gradient(135deg,#FFD3E1,#F9B9CE)}
+.pin:nth-child(3n) .pic{background:linear-gradient(135deg,#FFF3C4,#F9B9CE)}
+.pin h3{font-family:var(--hand);font-size:1.7rem;margin:.6rem 0 0;color:var(--ink);line-height:1.1}
+.pin p{margin:.2rem 0 0;font-size:.92rem;opacity:.8}
+.pin.note{background:var(--sun);color:var(--seed)}
+.pin.note .pic{background:none;font-family:var(--display);font-size:1.5rem;font-style:italic;text-align:center;aspect-ratio:auto;padding:1rem .4rem}
+
+/* Reasons */
+.reasons{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.reason{padding:1.4rem;border-radius:22px 22px 22px 4px;background:var(--card);border:2px solid var(--pink)}
+.reason:nth-child(even){border-color:var(--sun);border-radius:22px 22px 4px 22px}
+.reason b{font-family:var(--display);font-size:1.25rem;display:block;margin-bottom:.2rem}
+
+/* Letter */
+.letter{max-width:620px;margin:0 auto;background:var(--card);padding:2.2rem 1.8rem;border-radius:6px;box-shadow:0 14px 34px rgba(120,40,70,.14);rotate:-.6deg}
+.letter p{margin:.8rem 0}
+.sign{font-family:var(--hand);font-size:2rem;color:var(--pink-d)}
+footer{text-align:center;padding:3rem 1rem 4rem;font-family:var(--hand);font-size:1.6rem}
+footer .mini{display:block;width:56px;height:56px;margin:0 auto .5rem}
+.rv{opacity:0;translate:0 24px;transition:opacity .8s,translate .8s}
+.rv.in{opacity:1;translate:0 0}
+@media (prefers-reduced-motion:reduce){
+  .bloom,.msg .hi,.l1,.l2,.sub,.cta{animation-duration:.01s;animation-delay:0s}
+  .bloom>div{animation:none}.rv{transition:none;opacity:1;translate:0 0}.drop{display:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sunflower" viewBox="-50 -50 100 100">
+      <g id="petals"></g>
+      <circle r="17" fill="#6B4226"/>
+      <circle r="17" fill="none" stroke="#4A2D18" stroke-width="2" stroke-dasharray="1.5 3.5"/>
+      <circle r="9" fill="#4A2D18" opacity=".55"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="bloom" aria-hidden="true"><div><svg class="sf"><use href="#sunflower"/></svg></div></div>
+  <div class="msg">
+    <div class="hi">hey Snehal 🌸</div>
+    <h1>
+      <span class="l1">You are the best.</span>
+      <span class="l2">You're going to nail it.</span>
+    </h1>
+    <p class="sub">Spain is about to meet the brightest sunflower in the room.</p>
+    <div class="cta"><button class="btn" id="go">See your future 🌻</button></div>
+  </div>
+</header>
+
+<main>
+<section class="pad" id="board">
+  <h2 class="title rv">Snehal's vision board</h2>
+  <p class="lead rv">This is what's coming. Every pin is something you're going to do.</p>
+  <div class="board rv">
+    <article class="pin" tabindex="0"><div class="pic">🎓</div><h3>Graduation day, Spain</h3><p>Cap in the air. Sunshine on your face. Everyone who doubted you is cheering.</p></article>
+    <article class="pin" tabindex="0"><div class="pic">📚</div><h3>Top of the class</h3><p>Professors learn your name because your ideas are that good.</p></article>
+    <article class="pin" tabindex="0"><div class="pic">🏛️</div><h3>Madrid mornings</h3><p>Coffee in hand, walking to your own lecture hall.</p></article>
+    <article class="pin note" tabindex="0"><div class="pic">"She believed she could, so she did."</div><h3>Snehal, basically</h3></article>
+    <article class="pin" tabindex="0"><div class="pic">🗣️</div><h3>¡Hola, mundo!</h3><p>Ordering, joking and arguing in fluent Spanish.</p></article>
+    <article class="pin" tabindex="0"><div class="pic">🥘</div><h3>Tapas with new friends</h3><p>A table full of people who adore you.</p></article>
+    <article class="pin" tabindex="0"><div class="pic">✈️</div><h3>Weekends across Europe</h3><p>Barcelona, Lisbon, Paris. Passport stamps for days.</p></article>
+    <article class="pin" tabindex="0"><div class="pic">💼</div><h3>Dream offers</h3><p>Companies fighting over the woman with the Spanish master's degree.</p></article>
+  </div>
+</section>
+
+<section class="pad">
+  <h2 class="title rv">Why you'll do great</h2>
+  <p class="lead rv">Not a guess. Just facts about you.</p>
+  <div class="reasons">
+    <div class="reason rv"><b>You work hard</b>You've already done the difficult part: deciding to go.</div>
+    <div class="reason rv"><b>You're brave</b>A new country, a new language, a new life. Not everyone would try.</div>
+    <div class="reason rv"><b>You light up rooms</b>You'll make friends in week one. Watch.</div>
+    <div class="reason rv"><b>You're not alone</b>Wherever you are, someone back home is cheering for you.</div>
+  </div>
+</section>
+
+<section class="pad">
+  <h2 class="title rv">A little note</h2>
+  <div class="letter rv">
+    <p>Dear Snehal,</p>
+    <p>On the days it feels huge and scary, remember this: you didn't get this far by luck. You got here by being you. Keep going. Take it one day at a time.</p>
+    <p>Spain is lucky to get you. And I'm so proud of you already.</p>
+    <p class="sign">Your friend, always 💛</p>
+  </div>
+  <p style="text-align:center;margin-top:2.5rem" class="rv"><button class="btn" id="rain">I've got this 🌻</button></p>
+</section>
+</main>
+
+<footer><svg class="sf mini"><use href="#sunflower"/></svg>Go bloom, Snehal.</footer>
+
+<script>
+// Build sunflower petals once
+(function(){
+  var g=document.getElementById('petals'),s='';
+  for(var layer=0;layer<2;layer++){
+    for(var i=0;i<14;i++){
+      var a=i*(360/14)+layer*13;
+      s+='<ellipse cx="0" cy="-31" rx="7" ry="17" fill="'+(layer?'#F2A900':'#FFC93C')+'" transform="rotate('+a+')"/>';
+    }
+  }
+  g.innerHTML=s;
+})();
+
+function rain(n){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  for(var i=0;i<n;i++){
+    var d=document.createElement('div');
+    d.className='drop';
+    d.style.left=Math.random()*100+'vw';
+    d.style.width=d.style.height=(22+Math.random()*30)+'px';
+    d.style.animationDuration=(3+Math.random()*3)+'s';
+    d.style.animationDelay=(Math.random()*1.5)+'s';
+    d.style.setProperty('--dx',(Math.random()*120-60)+'px');
+    d.style.setProperty('--rot',(Math.random()*720-360)+'deg');
+    d.innerHTML='<svg class="sf"><use href="#sunflower"/></svg>';
+    document.body.appendChild(d);
+    setTimeout(function(el){el.remove()},8000,d);
+  }
+}
+setTimeout(function(){rain(14)},3900);
+document.getElementById('rain').onclick=function(){rain(36)};
+document.getElementById('go').onclick=function(){
+  rain(18);
+  document.getElementById('board').scrollIntoView({behavior:'smooth'});
+};
+
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
